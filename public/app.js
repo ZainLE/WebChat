@@ -12,6 +12,10 @@ socket.on('loginSuccess', (data) => {
   document.getElementById('chatPage').style.display = 'flex';
 });
 
+socket.on('loginError', (message) => {
+  alert(message);
+});
+
 socket.on('userList', (users) => {
   const userList = document.getElementById('userList');
   userList.innerHTML = '<h3>Connected Users</h3>';
